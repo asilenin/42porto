@@ -24,5 +24,4 @@ void	ft_print_comb(void)
 		}
 		++c[0];
 	}
-	write(1, ".", 1);
 }
