@@ -1,1 +1,1 @@
-ifconfig -a | awk '/ether/ {print $2}' | cat -e
+ifconfig | awk '/ether/ {print $2}' | cat -e
