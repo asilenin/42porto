@@ -1,35 +1,55 @@
 #include <unistd.h>
 #include <stdio.h>
 
-
-void    ft_print(int    n, int  m, char   c[n+1])
+void    ft_putchar(char c)
 {
-    int s;
+    write(1, &c, 1);
+}
+
+void    ft_print_c(char    *c, int  n, int l)
+{
+    int i;
     
-    c[m] = 0;
-    while (c[m] <= 9)
+    i = 0;
+    if(c[0] == l)
     {
-        if ((m + 1) == n)
+        while (i < n)
         {
-            s = n;
-            while (s >= 1)
-            {
-                write(1, &c[--s], 1);
-            }
+            ft_putchar(c[i++]);
         }
-        else
-        {
-            ft_print(n, (m + 1), c);
-        }
-        ++c[m];
+        return;
     }
+    while (i < n)
+    {
+        ft_putchar(c[i++]);
+    }
+    write(1, ", ", 2);
 }
 
 void    ft_print_combn(int  n)
 {
-    char    c[n+1];
+    char    c[10];
+    char    c_max[10];
+    int i;
+    int d;
+    int s;
     
-    c[n] = ',';
-    c[0] = 1;
-    ft_print(n, 0, c);
+    i = 0;
+    while (i < n)
+    {
+        c[i] = i + 48;
+        c_max[i] = (10 - n) + i + 48;
+        ++i;
+    }
+    ft_print_c(c, n, c_max[0]);
+    while(c[0] != c_max[0])
+    {
+        d = n - 1;
+        while (c[d] == c_max[d])
+            --d;
+        s = ++(c[d]);
+        while (d < n)
+            c[++d] = ++s;
+        ft_print_c(c, n, c_max[0]);
+    }
 }
