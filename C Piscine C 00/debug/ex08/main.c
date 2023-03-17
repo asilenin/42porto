@@ -1,13 +1,25 @@
-#include    <unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: asilenin <asilenin@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/17 08:57:16 by asilenin          #+#    #+#             */
+/*   Updated: 2023/03/17 22:46:43 by asilenin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void    ft_print_combn(int  n);
+#include	<unistd.h>
 
-int main(void)
+void	ft_print_combn(int n);
+
+int	main(void)
 {
-    int n;
-    
-    n = 3;
-    ft_print_combn(n);
-    write(1, "\n", 1);
-    return (0);
+	int	n;
+
+	n = 3;
+	ft_print_combn(n);
+	write (1, "\n", 1);
+	return (0);
 }
