@@ -37,9 +37,9 @@ void	ft_print_combn(int n)
 {
 	char	c[10];
 	char	c_max[10];
-	int	i;
-	int	d;
-	int	s;
+	int		i;
+	int		d;
+	int		s;
 
 	i = 0;
 	while (i < n)
